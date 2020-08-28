@@ -1,23 +1,5 @@
 # https://programmers.co.kr/learn/courses/30/lessons/42627
 
-
-'''
-스케치 
-
-1. 요청 시점 순으로 정렬
-
-2. 요청 시점이 가장 빠른 작업 바로 실행 -> 최초 시작 작업이라 하자
-
-3. 최초 시작 작업이 종료되기 전까지 요청되는 작업의 개수 >= 2 일 때 우선순위 부여
-   * 만약 모든 작업 종료후 요청되는 경우에는 가장 빠른 요청 우선
-
-4. 우선순위
-  - 요청부터 종료까지 걸리는 시간이 짧은 순으로 정렬
-  - 요청부터 종료까지 걸리는 시간 : |작업요청시각 - (최초시작작업종료시각+작업소요시간)|
-
-'''
-
-
 def solution(jobs):
     import heapq
     n = len(jobs)
@@ -61,45 +43,59 @@ def solution(jobs):
                 
 
 
+'''
+스케치 
+
+1. 요청 시점 순으로 정렬
+
+2. 요청 시점이 가장 빠른 작업 바로 실행 -> 최초 시작 작업이라 하자
+
+3. 최초 시작 작업이 종료되기 전까지 요청되는 작업의 개수 >= 2 일 때 우선순위 부여
+   * 만약 모든 작업 종료후 요청되는 경우에는 가장 빠른 요청 우선
+
+4. 우선순위
+  - 요청부터 종료까지 걸리는 시간이 짧은 순으로 정렬
+  - 요청부터 종료까지 걸리는 시간 : |작업요청시각 - (최초시작작업종료시각+작업소요시간)|
+
+'''
+
+# My Code
+# def solution(jobs):
+#     answer = 0
+#     import heapq
+
+#     haep = []
+#     sorted_jobs = sorted(jobs, key=lambda x : x[1])
+#     for j in sorted_jobs:
+#         heapq.heappush(heap, j)
+#     print(heap)
+#     def cal(startq, queries):
+#         tmp = 0
+#         for q in queries:
+#             tmp += 1 if startq == q
 
 
-def solution(jobs):
-    answer = 0
-    import heapq
-
-    haep = []
-    sorted_jobs = sorted(jobs, key=lambda x : x[1])
-    for j in sorted_jobs:
-        heapq.heappush(heap, j)
-    print(heap)
-    def cal(startq, queries):
-        tmp = 0
-        for q in queries:
-            tmp += 1 if startq == q
-
-
-    # Pointing?
-    for i, (s, e) in enumerate(sorted_jobs):
-        # Scan to check whether there're jobs
-        print("Finding {}th job's queries".format(i))
-        queries = []
+#     # Pointing?
+#     for i, (s, e) in enumerate(sorted_jobs):
+#         # Scan to check whether there're jobs
+#         print("Finding {}th job's queries".format(i))
+#         queries = []
         
-        for p in range(s, e):
-            queries.append([ j for j in sorted_jobs[i:] if j[0] == p ])
+#         for p in range(s, e):
+#             queries.append([ j for j in sorted_jobs[i:] if j[0] == p ])
         
-        q2e = [abs(j[0] - (sorted_jobs[0]+j[1])) for j in sorted_jobs]
+#         q2e = [abs(j[0] - (sorted_jobs[0]+j[1])) for j in sorted_jobs]
 
 
 
-    # 작업 요청 시간 순 & 소요시간 순으로 정렬
-    # 동일 요청 시간에 복수의 작업요청이 있을 경우 종료시간 작은 순
+#     # 작업 요청 시간 순 & 소요시간 순으로 정렬
+#     # 동일 요청 시간에 복수의 작업요청이 있을 경우 종료시간 작은 순
 
-    sorted_jobs
-    query2end = [abs(j[0] - (sorted_jobs[0]+j[1])) for j in sorted_jobs]
-    print(query2end)
-    return answer
+#     sorted_jobs
+#     query2end = [abs(j[0] - (sorted_jobs[0]+j[1])) for j in sorted_jobs]
+#     print(query2end)
+#     return answer
 
 if __name__ == "__main__":
     jobs = [[0, 3], [1, 9], [2, 6], [3, 7], ]
     solution(jobs)
-    
