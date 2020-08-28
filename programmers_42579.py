@@ -1,5 +1,40 @@
 # https://programmers.co.kr/learn/courses/30/lessons/42579
 import time
+def solution(genres, plays):
+    from collections import defaultdict
+    answer = []
+
+    genre_dic = defaultdict(dict)
+    genre_count = defaultdict(int)
+    # d
+    for i, (g, p) in enumerate(zip(genres, plays)):
+        genre_count[g] += p
+        genre_dic[g][i] = p
+       
+    genre_sorted = sorted(genre_count.items(), key=lambda x : x[1])[::-1]
+    
+    for g, _ in genre_sorted:
+        song_sorted = sorted(genre_dic[g].items(), key=lambda x : (-x[1], x[0]))[:2]
+        answer.extend([ s for s, _ in song_sorted])
+    
+    return answer
+
+if __name__ == '__main__':
+    # Test Case
+    genres = ['classic', 'pop', 'classic', 'classic', 'pop']
+    plays = [500, 600, 150, 800, 2500]
+
+    run_time = []
+    for _ in range(1000):
+        s = time.time()
+        solution(genres, plays)
+        run_time.append(time.time() -s)
+    print(sum(run_time)/1000)
+
+    print(solution(genres, plays))
+
+
+#####################################
 # Error Code
 # def solution(genres, plays):
 #     answer = []
@@ -60,46 +95,3 @@ import time
 #         # answer.extend([ s[0] for s in song_sorted ])
 
 #     return answer
-
-def solution(genres, plays):
-    answer = []
-    
-    from collections import defaultdict
-    genre_dic = defaultdict(dict)
-    genre_count = defaultdict(int)
-
-    for i, (g, p) in enumerate(zip(genres, plays)):
-        genre_count[g] += p
-        genre_dic[g][i] = p
-       
-    genre_sorted = sorted(genre_count.items(), key=lambda x : x[1])[::-1]
-    for g, _ in genre_sorted:
-        song_sorted = sorted(genre_dic[g].items(), key=lambda x : (-x[1], x[0]))[:2]
-        answer.extend([ s for s, _ in song_sorted])
-    return answer
-
-if __name__ == '__main__':
-    # genres = ['classic', 'pop', 'classic', 'classic', 'pop', 'hiphop', 'rock', 'disco']
-    # plays =  [      500,   600,       150,       800,  2500,      210,    200,   3000]
-
-    # 샘플이 하나라면
-    # genres = ['classic']
-    # plays = [500]
-
-    # 장르가 하나밖에 없다면?
-    # genres = ['classic', 'classic', 'classic']
-    # plays = [500, 600, 150]
-
-
-    # Basic Case
-    genres = ['classic', 'pop', 'classic', 'classic', 'pop']
-    plays = [500, 600, 150, 800, 2500]
-
-    run_time = []
-    for _ in range(1000):
-        s = time.time()
-        solution(genres, plays)
-        run_time.append(time.time() -s)
-    print(sum(run_time)/1000)
-
-    print(solution(genres, plays))
