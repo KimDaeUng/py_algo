@@ -1,4 +1,6 @@
 # https://programmers.co.kr/learn/courses/30/lessons/42627
+# Reference : 
+# - https://inspirit941.tistory.com/entry/Python-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%94%94%EC%8A%A4%ED%81%AC-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC-Level-3
 
 def solution(jobs):
     import heapq
