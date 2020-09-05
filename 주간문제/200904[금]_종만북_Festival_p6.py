@@ -1,4 +1,4 @@
-import os, sys
+import sys
 
 # 시간 초과
 def solution_1(N, L, cost):
