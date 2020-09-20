@@ -1,5 +1,6 @@
+# 8강 연결 리스트 ADT
+
 class Node:
-    
     def __init__(self, item):
         self.data = item
         self.next = None
