@@ -22,18 +22,25 @@ def solution(N, M, M_list):
     # 1. m_list에서 순차적으로 쌍 탐색
     stack = []
     l = 0
-
-    while 
-        while l == N/2:
+    c = 0
+        def rec(m_list, l, c):
+            # 첫번째 짝 추출
             mate = m_list.pop()
-            stack.append(mate)
+            # 첫번째 짝을 제외하고 뽑을 수 있는 나머지 조합
             left_list = [i for i in m_list if (mate[0] not in i)&(mate[1] not in i)]
-            if len(left_list) < N/2:
-                m_list.append(mate)
-                continue
+            if len(left_list) < (N/2):
+                return
             else:
-                m_list = left_list
-                l += 1
+                if l < N/2:
+                    l += 1
+                    rec(m_list, l, c)
+                else:
+                    c += 1
+                    rec()
+            else:
+
+                
+            l += 1
 
 
 
