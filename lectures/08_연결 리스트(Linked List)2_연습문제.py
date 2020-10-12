@@ -84,6 +84,7 @@ class LinkedList:
             # 3-2)Head < Node < Tail 범위내 Node 삭제한 경우
             else:
                 prev.next = curr.next
+                # ?? tail 안바꿔도 되지않나?
                 self.tail = self.getAt(self.nodeCount-1)
         # nodeCount 1 감소
         self.nodeCount -= 1
