@@ -12,6 +12,9 @@ class Solution:
 
         return _rob(len(nums) - 1)
 '''
+
+[1, 2, 3, 1]
+
 -------------------
 _rob(3)
 max(_rob(2), _rob(1) + nums[3])
