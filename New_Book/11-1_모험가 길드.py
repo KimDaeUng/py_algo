@@ -1,9 +1,14 @@
 # 입력
-n = map(int, input())
-data = list(map(int, input().split()))
+# n = map(int, input())
+# data = list(map(int, input().split()))
+import numpy as np
+
+N = 300
+data = list(np.random.randint(1, N, size=(1, N))[0])
 
 # 가장 공포도가 큰 사람부터 꺼낼 수 있도록 정렬
 data.sort()
+print(data)
 
 count = 0
 while data:
