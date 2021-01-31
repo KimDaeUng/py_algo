@@ -14,9 +14,9 @@ for i in range(0, n-1):
         # 무게가 다른 경우
         else:
             # 목록에 있지 않은 경우에 results에 append
-            if (i, j) not in results:
-                results.append((i,j))
-                answer += 1
+            # if (i, j) not in results:
+                # results.append((i,j))
+            answer += 1
 # print(len(results))
 print(answer)
 

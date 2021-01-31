@@ -1,4 +1,3 @@
-# 0을 만나면 무조건 다음 연산자는 +, 이외에는 *
 S = list(map(str, input()))
 
 result = int(S[0])
