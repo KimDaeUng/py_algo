@@ -1,4 +1,4 @@
-# https://programmers.co.kr/learn/courses/30/lessons/12978
+https://programmers.co.kr/learn/courses/30/lessons/12978
 from collections import deque
 def solution(N, road, K):
     answer = 0
