@@ -39,8 +39,6 @@ def watch(r, c, board, catch):
                 nr = nr + dr[i]
                 nc = nc + dc[i]
                 continue
-                # board[nr][nc] = 'V'
-                # watch(nr, nc, board)
             # 벽 또는 다른 선생을 만날 경우 다른 방향으로 넘어감
             elif board[nr][nc] == 'O' or board[nr][nc] == 'T':
                 break
