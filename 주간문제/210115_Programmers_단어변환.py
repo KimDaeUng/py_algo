@@ -78,7 +78,7 @@ def solution(begin, target, words):
 print(solution("hit", "cog", ["hot", "dot", "dog", "lot", "log"]))
 exit()
 
-# Solustion
+# Solution
 #########################
 
 # from collections import deque
