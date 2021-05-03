@@ -1,6 +1,25 @@
 import heapq
 import sys
-input = sys.stdin.readline
+# input = sys.stdin.readline
+def testcase():
+    yield '6 11'
+    yield '1'
+    yield '1 2 2'
+    yield '1 3 5'
+    yield '1 4 1'
+    yield '2 3 3'
+    yield '2 4 2'
+    yield '3 2 3'
+    yield '3 6 5'
+    yield '4 3 3'
+    yield '4 5 1'
+    yield '5 3 1'
+    yield '5 6 2'
+
+G = testcase()
+
+def input():
+    return next(G)
 INF = int(1e9) # 무한을 의미하는 값으로 10억 설정
 
 # 노드 개수, 간선 개수 입력받기
@@ -35,7 +54,7 @@ def dijkstra(start):
             # 현재 노드를 거쳐서, 다른 노드로 이동하는 거리가 더 짧은 경우
             if cost < distance[i[0]]:
                 distance[i[0]] = cost
-                heapq.heappush(q, (cost, i [0]))
+                heapq.heappush(q, (cost, i[0]))
 
 # 다익스트라 알고리즘 수행
 dijkstra(start)
@@ -48,23 +67,3 @@ for i in range(1, n + 1):
     # 도달할 수 있는 경우 거리를 출력
     else:
         print(distance[i])
-
-# def testcase():
-#     yield '6 11'
-#     yield '1'
-#     yield '1 2 2'
-#     yield '1 3 5'
-#     yield '1 4 1'
-#     yield '2 3 3'
-#     yield '2 4 2'
-#     yield '3 2 3'
-#     yield '3 6 5'
-#     yield '4 3 3'
-#     yield '4 5 1'
-#     yield '5 3 1'
-#     yield '5 6 2'
-
-# G = testcase()
-
-# def input():
-#     return next(G)
