@@ -1,3 +1,4 @@
+# https://programmers.co.kr/learn/courses/30/lessons/42626
 # 18:07-18:33
 # heap.heapify()를 처음에 사용하지 않아 계속 에러
 import heapq
