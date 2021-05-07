@@ -1,4 +1,5 @@
 # 16:07-16:20, 16:40-17:28
+# https://programmers.co.kr/learn/courses/30/lessons/42747
 def solution(citations):
     citations.sort(reverse=True)
     len_c = len(citations)
