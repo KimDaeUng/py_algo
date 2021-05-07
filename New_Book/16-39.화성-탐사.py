@@ -1,4 +1,3 @@
-# 02:50-
 string = '''3
 3
 5 5 4
@@ -18,13 +17,6 @@ string = '''3
 9 4 0 7 6 4 1
 5 8 3 2 4 8 3
 7 4 8 4 8 3 4'''
-
-# string = '''5 5
-# 4 3
-# 4 2
-# 3 2
-# 1 2
-# 2 5'''
 
 def testcase(string):
     string = string.split("\n")
