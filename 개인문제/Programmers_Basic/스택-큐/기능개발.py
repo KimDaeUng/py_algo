@@ -42,7 +42,7 @@ def solution(progresses, speeds):
     Q = []
     for p, s in zip(progresses, speeds):
         # math.ceil 쓰지 않고 ceil
-        # int(- 3.5) = -4,  int(3.5) = 3
+        # -int(- 3.4) = 4,  int(3.4) = 3
         progress_day = - (p - 100) // s
         if len(Q) == 0 or Q[-1][0] < progress_day:
             Q.append([progress_day, 1])
