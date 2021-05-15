@@ -1,21 +1,4 @@
 INF = int(1e9) # 무한을 의미하는 값으로 10억 설정
-
-def testcase():
-    yield '4'
-    yield '7'
-    yield '1 2 4'
-    yield '1 4 6'
-    yield '2 1 3'
-    yield '2 3 7'
-    yield '3 1 5'
-    yield '3 4 4'
-    yield '4 3 2'
-    
-G = testcase()
-
-def input():
-    return next(G)
-
 # 노드 개수, 간선 개수 입력받기
 n = int(input())
 m = int(input())
@@ -50,3 +33,20 @@ for a in range(1, n + 1):
         else:
             print(graph[a][b], end=" ")
     print()
+
+
+def testcase():
+    yield '4'
+    yield '7'
+    yield '1 2 4'
+    yield '1 4 6'
+    yield '2 1 3'
+    yield '2 3 7'
+    yield '3 1 5'
+    yield '3 4 4'
+    yield '4 3 2'
+    
+G = testcase()
+
+def input():
+    return next(G)
