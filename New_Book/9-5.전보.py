@@ -1,19 +1,3 @@
-# 17:18-
-'''
-# Dijkstra
-
-'''
-
-def testcase():
-    yield '3 2 1'
-    yield '1 2 4'
-    yield '1 3 2'
-
-G = testcase()
-
-def input():
-    return next(G)
-
 import sys
 import heapq
 input = sys.stdin.readline
@@ -104,3 +88,19 @@ for d in distance:
         max_distance = max(max_distance, d)
 # 더미 노드는 제외해야 하므로 count - 1을 출력
 print(count - 1, max_distance)
+
+'''
+# Dijkstra
+
+'''
+
+def testcase():
+    yield '3 2 1'
+    yield '1 2 4'
+    yield '1 3 2'
+
+G = testcase()
+
+def input():
+    return next(G)
+

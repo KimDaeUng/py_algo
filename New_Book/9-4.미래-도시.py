@@ -1,27 +1,3 @@
-# 16:49-17:07
-
-def testcase():
-    yield '5 7'
-    yield '1 2'
-    yield '1 3'
-    yield '1 4'
-    yield '2 4'
-    yield '3 4'
-    yield '3 5'
-    yield '4 5'
-    yield '4 5'
-
-def testcase2():
-    yield '4 2'
-    yield '1 3'
-    yield '2 4'
-    yield '3 4'
-
-G = testcase2()
-
-def input():
-    return next(G)
-
 # My Solution 
 INF = int(1e9)
 n, m = map(int, input().split())
@@ -91,3 +67,26 @@ if distance >= INF:
 # 도달할 수 있다면, 최단 거리를 출력
 else:
     print(distance)
+
+# 16:49-17:07
+def testcase():
+    yield '5 7'
+    yield '1 2'
+    yield '1 3'
+    yield '1 4'
+    yield '2 4'
+    yield '3 4'
+    yield '3 5'
+    yield '4 5'
+    yield '4 5'
+
+def testcase2():
+    yield '4 2'
+    yield '1 3'
+    yield '2 4'
+    yield '3 4'
+
+G = testcase2()
+
+def input():
+    return next(G)
