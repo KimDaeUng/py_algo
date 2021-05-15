@@ -77,7 +77,8 @@ def solution(n, s, a, b, fares):
 # Solution 1 : 위의 내 풀이와 동일, 생략
 
 # Solution 2 : Dijstra를 이용한 다른 풀이
-# 두 번째 for 문이 모든 경유지에 대한 다익스르타 수행
+# 두 번째 for 문이 모든 경유지에 대한 다익스트라 수행
+# 위의 내 풀이보다 매우 느림.
 from collections import defaultdict
 import heapq
 

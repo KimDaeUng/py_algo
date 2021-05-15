@@ -2,3 +2,4 @@
 .vscode/
 lectures/.ipynb_checkpoints/
 코테/
+*.pptx
