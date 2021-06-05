@@ -103,7 +103,7 @@ while True:
 
 print(cnt)
 
-# Solution
+# Solution : BFS
 from collections import deque
 
 # 땅의 크기(N), L, R 값을 입력받기
