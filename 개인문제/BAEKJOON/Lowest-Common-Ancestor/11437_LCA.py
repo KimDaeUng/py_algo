@@ -32,7 +32,12 @@ G = testcase(string)
 def input():
     return next(G)
 
-# My Solution : 기존 Solution 복기 코드
+# My Solution : 기존 Solution 복기 코드 :
+'''
+time complexity : O(NM)
+- 매 쿼리마다(M) 부모 방향으로 거슬러 올라가기 때문에 최악의 경우 하나의 쿼리당 O(N)
+'''
+
 import sys
 sys.setrecursionlimit(int(1e5)) # 런타임 오류를 피하기
 input = sys.stdin.readline
