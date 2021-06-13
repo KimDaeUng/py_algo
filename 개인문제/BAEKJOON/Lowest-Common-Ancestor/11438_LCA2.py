@@ -46,8 +46,10 @@ sys.setrecursionlimit(10 ** 5)
 n = int(input())
 graph = [[] for _ in range(n + 1)]
 depth = [0] * (n + 1)
-bit_max = 17
-parent_bit = [ [0] * bit_max for _ in range(n + 1) ]
+log_max = 17
+# 노드의 개수 n = 100,000
+# log_2(1e5) = 16.61... -> 17
+parent_bit = [ [0] * log_max for _ in range(n + 1) ]
 check = [False] * (n + 1)
 
 for _ in range(n - 1):
@@ -71,14 +73,14 @@ def lca(a, b):
     if depth[a] > depth[b]:
         a, b = b, a
 
-    for i in range(bit_max - 1, -1, -1):
-        if (depth[b] - depth[a]) >= (1 << i):
+    for i in range(log_max - 1, -1, -1):
+        if (depth[b] - depth[a]) >= (2 ** i):
             b = parent_bit[b][i]
 
     if a == b:
         return a
     
-    for i in range(bit_max - 1, -1, -1):
+    for i in range(log_max - 1, -1, -1):
         # 왜 else때 break하지 않는지?
         if parent_bit[a][i] != parent_bit[b][i]:
             a = parent_bit[a][i]
@@ -86,34 +88,36 @@ def lca(a, b):
 
     return parent_bit[a][0]
 
-# parent_bit의 첫번째 값은 1단계 위의 부모 노드
-for i in range(1, bit_max):
+# 2의 제곱꼴 건너뛸때 부모값 기록
+for i in range(1, log_max):
     for cur_node in range(1, n + 1):
         parent_bit[cur_node][i] = \
         parent_bit[parent_bit[cur_node][i-1]][i-1]
-
+# import pprint
 m = int(input())
 for _ in range(m):
     a, b = map(int, input().split())
     print(lca(a, b))
 
+# pprint.pprint(parent_bit)
+
 '''
- [[0, 0, 0, 0],
- 1 [0, 0, 0, 0],
- 2 [1, 0, 0, 0],
- 3 [1, 0, 0, 0],
- 4 [2, 1, 0, 0],
- 5 [2, 1, 0, 0],
- 6 [2, 1, 0, 0],
- 7 [3, 1, 0, 0],
- 8 [3, 1, 0, 0],
- 9 [4, 2, 0, 0],
-10 [4, 2, 0, 0],
-11 [5, 2, 0, 0],
-12 [5, 2, 0, 0],
-13 [7, 3, 0, 0],
-14 [7, 3, 0, 0],
-15 [11, 5, 1, 0]]
+ [  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  1 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  2 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  3 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  4 [2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  5 [2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  6 [2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  7 [3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  8 [3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  9 [4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+ 10 [4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+ 11 [5, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+ 12 [5, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+ 13 [7, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+ 14 [7, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+ 15 [11, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
 # def dfs(root):
 #     stack = [(root, 0)]
