@@ -1,5 +1,5 @@
 # https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/start/
-
+# 14:00-14:15
 # My Solution
 def solution(A, K):
     if len(A) <= 1:
@@ -18,7 +18,7 @@ def solution(A, K):
 
 def solution(A, K):
     N = len(A)
-    
+
     if N < 2:
         return A
     
