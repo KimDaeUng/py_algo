@@ -1,5 +1,5 @@
 # https://programmers.co.kr/learn/courses/30/lessons/67256
-# 00:46-00:25
+# 00:46-01:25
 
 # My Solution:
 # 양측 손의 마지막 번호 위치
