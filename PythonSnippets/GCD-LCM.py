@@ -1,6 +1,10 @@
 # https://brownbears.tistory.com/454
 
 '''
+# ref
+- https://tech.lonpeach.com/2017/11/12/Euclidean-algorithm/
+- https://brownbears.tistory.com/454
+
 # GCD(Greatest Common Divisor)
 주어진 두 수 x, y에서 x의 약수이면서 y의 약수인 수 중 최대값을 의미합니다.ㅇ
 최대 공약수를 구하는 간단한 방법은 1에서 x와 y중 작은 값의 범위에서 공약수(둘 모두 나머지가 0)를 모두 구한 다음
