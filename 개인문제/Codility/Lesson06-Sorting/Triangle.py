@@ -1,5 +1,5 @@
 # https://app.codility.com/programmers/lessons/6-sorting/triangle/
-
+# https://app.codility.com/demo/results/training4VRZAR-KVE/
 # My Solution
 # 배열 내에 삼각형의 각 변의 부등식 조건을 만족하는 세 수가 있는지 확인하는 문제
 # 오름차순 정렬하면 부등식 중 하나의 조건만 고려하여 비교가 가능해지므로
