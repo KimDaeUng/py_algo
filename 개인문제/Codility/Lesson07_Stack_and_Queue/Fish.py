@@ -2,7 +2,7 @@
 # 30m
 
 # My Solution : Retry
-# https://app.codility.com/demo/results/trainingAQT96Q-TYN/
+# https://app.codility.com/demo/results/trainingZTMQMM-2Z6/
 # ref : https://jobjava00.github.io/algorithm/codility/lesson7/Fish/
 def solution(A, B):
     st = []
@@ -11,11 +11,8 @@ def solution(A, B):
         if d == 1:
             st.append(fish)
         else:
-            while len(st) > 0:
-                if st[-1] > fish:
-                    break
-                else:
-                    st.pop()
+            while len(st) > 0 and st[-1] < fish:
+                st.pop()
             if len(st) == 0:
                 cnt += 1
 
