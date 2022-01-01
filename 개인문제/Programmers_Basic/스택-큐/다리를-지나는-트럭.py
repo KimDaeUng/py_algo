@@ -13,7 +13,6 @@ bridge 큐를 만들고, 매번 남는 다리 하중을 계산.
 '''
 from collections import deque
 def solution(bridge_length, weight, truck_weights):
-    answer = 0
     bridge = deque([])
     truck_weights = deque([[i, 0] for i in truck_weights])
     count = len(truck_weights)

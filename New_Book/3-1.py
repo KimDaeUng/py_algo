@@ -8,3 +8,15 @@ for coin in coin_types:
     n %= coin # 거슬러 준 나머지 금액 갱신
 
 print(count)
+
+# 21.12.29.
+total = 1260
+answer = 0
+coin_types = [500, 100, 50, 10]
+
+for coin_type in coin_types:
+	q, r = divmod(total, coin_type)
+	answer += q
+	total = r 
+
+print(answer)
